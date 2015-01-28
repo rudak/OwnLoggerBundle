@@ -1,0 +1,4 @@
+rudak_own_logger_admin_logger:
+    resource: "@RudakOwnLoggerBundle/Resources/config/routing/log.yml"
+    prefix:   /admin/logger
+

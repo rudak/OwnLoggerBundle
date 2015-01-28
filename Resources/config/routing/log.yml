@@ -1,0 +1,21 @@
+admin_logger:
+    path:     /
+    defaults: { _controller: "RudakOwnLoggerBundle:Log:index" }
+
+admin_logger_show:
+    path:     /{id}/show
+    defaults: { _controller: "RudakOwnLoggerBundle:Log:show" }
+
+admin_logger_new:
+    path:     /new
+    defaults: { _controller: "RudakOwnLoggerBundle:Log:new" }
+
+admin_logger_create:
+    path:     /create
+    defaults: { _controller: "RudakOwnLoggerBundle:Log:create" }
+    requirements: { _method: post }
+
+admin_logger_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RudakOwnLoggerBundle:Log:delete" }
+    requirements: { _method: post|delete }

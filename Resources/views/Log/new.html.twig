@@ -1,0 +1,14 @@
+{% extends admin_layout %}
+
+{% block layout -%}
+    <h1>Log creation</h1>
+    <div class="form_perso">
+        {{ form(form) }}
+    </div>
+
+
+
+    <a href="{{ path('admin_logger') }}">
+        Back to the list
+    </a>
+{% endblock %}

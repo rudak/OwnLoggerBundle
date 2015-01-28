@@ -1,0 +1,5 @@
+services:
+    rudak.own.logger:
+        class: Rudak\OwnLoggerBundle\Model\OwnLogger
+        arguments:
+            container: "@doctrine.orm.entity_manager"

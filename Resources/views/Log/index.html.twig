@@ -1,0 +1,41 @@
+{% extends admin_layout %}
+
+{% block layout -%}
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('rcmAdminIndex') }}">Administration</a>
+        </li>
+        <li class="active">
+            Logs
+        </li>
+    </ol>
+
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Utilisateur</th>
+            <th>Categorie</th>
+            <th>Action</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.user }}</td>
+                <td>{{ entity.category }}</td>
+                <td>{{ entity.action }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y \\à H:i:s') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('admin_logger_show', { 'id': entity.id }) }}" class="btn btn-xs btn-default">
+                        Voir
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
