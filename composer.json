@@ -1,0 +1,21 @@
+{
+  "name": "rudak/own-logger-bundle",
+  "type": "symfony-bundle",
+  "description": "Bundle permettant de logger ce que j'ai envie simplement",
+  "keywords": ["log"],
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Kadur Arnaud",
+      "email": "contact@kadur-arnaud.fr",
+      "homepage": "http://kadur-arnaud.fr"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Rudak\\OwnLoggerBundle": ""
+    }
+  },
+  "target-dir": "Rudak/OwnLoggerBundle",
+  "minimum-stability": "stable"
+}
