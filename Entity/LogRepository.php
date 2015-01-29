@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class LogRepository extends EntityRepository
 {
+    public function getLogs($nb = 50)
+    {
+        $qb = $this->createQueryBuilder('l')
+            ->setMaxResults($nb)
+            ->orderBy('l.id', 'DESC')
+            ->getQuery();
+        return $qb->execute();
+    }
 }

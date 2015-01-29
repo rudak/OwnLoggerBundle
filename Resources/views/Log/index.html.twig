@@ -10,7 +10,7 @@
         </li>
     </ol>
 
-    <table class="table table-condensed">
+    <table class="table table-condensed tablesorter" id="log_table">
         <thead>
         <tr>
             <th>Utilisateur</th>
@@ -26,7 +26,7 @@
                 <td>{{ entity.user }}</td>
                 <td>{{ entity.category }}</td>
                 <td>{{ entity.action }}</td>
-                <td>{% if entity.date %}{{ entity.date|date('d/m/Y \\à H:i:s') }}{% endif %}</td>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y H:i:s') }}{% endif %}</td>
                 <td>
                     <a href="{{ path('admin_logger_show', { 'id': entity.id }) }}" class="btn btn-xs btn-default">
                         Voir
@@ -36,6 +36,23 @@
         {% endfor %}
         </tbody>
     </table>
-
-
 {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('public/css/table_sorter_theme/style.css') }}"/>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('public/js/jquery.tablesorter.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                    $("#log_table").tablesorter({
+                        3 : {
+                            sorter : false
+                        }
+                    });
+                }
+        );
+    </script>
+{% endblock %}
+

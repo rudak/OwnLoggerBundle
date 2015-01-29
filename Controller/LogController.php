@@ -23,7 +23,7 @@ class LogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('RudakOwnLoggerBundle:Log')->findAll();
+        $entities = $em->getRepository('RudakOwnLoggerBundle:Log')->getLogs(50);
 
         return $this->render('RudakOwnLoggerBundle:Log:index.html.twig', array(
             'entities' => $entities,
